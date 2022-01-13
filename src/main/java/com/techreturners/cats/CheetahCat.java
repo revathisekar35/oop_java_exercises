@@ -31,7 +31,7 @@ public class CheetahCat extends BaseCat implements Cat {
 	}
 
 	public int getAverageHeight() {
-		if(super.isDomestic())
+		if (super.isDomestic())
 			return AVERAGEDOMESTICCATHEIGHT;
 		else
 			return AVERAGEWILDCATHEIGHT;
@@ -44,7 +44,7 @@ public class CheetahCat extends BaseCat implements Cat {
 
 	@Override
 	public String getSetting() {
-		if(super.isDomestic())
+		if (super.isDomestic())
 			return SETTINGDOMESTIC;
 		else
 			return SETTINGWILD;

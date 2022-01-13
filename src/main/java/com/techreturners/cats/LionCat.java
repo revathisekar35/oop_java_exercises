@@ -28,6 +28,7 @@ public class LionCat extends BaseCat implements Cat {
 	public void goToSleep() {
 		setAsleep(true);
 	}
+
 	public int getAverageHeight() {
 		if (super.isDomestic())
 			return AVERAGEDOMESTICCATHEIGHT;

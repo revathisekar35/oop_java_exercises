@@ -21,7 +21,7 @@ public class DomesticCat extends BaseCat implements Cat {
 
 	@Override
 	public String run() {
-		return RUN;
+		return CatFeature.RUN.behaviour;
 	}
 
 	@Override
@@ -32,18 +32,18 @@ public class DomesticCat extends BaseCat implements Cat {
 
 	@Override
 	public int getAverageHeight() {
-		if (super.isDomestic())
-			return AVERAGEDOMESTICCATHEIGHT;
+		if (isDomestic())
+			return CatAverageHeight.DOMESTICCATHEIGHT.height;
 		else
-			return AVERAGEWILDCATHEIGHT;
+			return CatAverageHeight.WILDCATHEIGHT.height;
 	}
 
 	@Override
 	public String getSetting() {
-		if (super.isDomestic())
-			return SETTINGDOMESTIC;
+		if (isDomestic())
+			return CatFeature.DOMESTIC.behaviour;
 		else
-			return SETTINGWILD;
+			return CatFeature.WILD.behaviour;
 	}
 
 	@Override
@@ -58,9 +58,9 @@ public class DomesticCat extends BaseCat implements Cat {
 
 	@Override
 	public String getCatDefaultSound() {
-		if (super.getCatDefaultSound() == super.MEAOW)
+		if (super.getCatDefaultSound() == CatFeature.MEAOW.behaviour)
 			return "meaaaaow...";
-		return super.MEAOW;
+		return CatFeature.MEAOW.behaviour;
 	}
 
 }

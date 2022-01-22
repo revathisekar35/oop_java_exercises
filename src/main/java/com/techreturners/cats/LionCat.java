@@ -31,9 +31,9 @@ public class LionCat extends BaseCat implements Cat {
 
 	public int getAverageHeight() {
 		if (isDomestic())
-			return CatAverageHeight.DOMESTICCATHEIGHT.height;
+			return CatAverageHeight.DOMESTIC_CAT_HEIGHT.height;
 		else
-			return CatAverageHeight.WILDCATHEIGHT.height;
+			return CatAverageHeight.WILD_CAT_HEIGHT.height;
 	}
 
 	@Override

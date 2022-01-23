@@ -3,6 +3,8 @@ package com.techreturners.cats;
 public abstract class BaseCat {
 	private boolean isDomestic;
 	private boolean isAsleep;
+	private String eatingSound;
+	private String color;
 
 	public enum CatFeature {
 		MEAOW("meaow"), RUN("I am running"), DOMESTIC("domestic"), WILD("wild");
@@ -24,9 +26,50 @@ public abstract class BaseCat {
 		}
 	}
 
-	public BaseCat(boolean isAsleep, boolean isDomestic) {
+	public BaseCat(boolean isAsleep, boolean isDomestic, String eatingSound, String color) {
 		this.isAsleep = isAsleep;
 		this.isDomestic = isDomestic;
+		this.eatingSound = eatingSound;
+		this.color = color;
+	}
+
+	public String getCatDefaultSound() {
+		return CatFeature.MEAOW.behaviour;
+	}
+
+	public int getAverageHeight() {
+		if (isDomestic())
+			return CatAverageHeight.DOMESTIC_CAT_HEIGHT.height;
+		else
+			return CatAverageHeight.WILD_CAT_HEIGHT.height;
+	}
+
+	public String getSetting() {
+		if (isDomestic())
+			return CatFeature.DOMESTIC.behaviour;
+		else
+			return CatFeature.WILD.behaviour;
+	}
+
+	public String run() {
+		return CatFeature.RUN.behaviour;
+	}
+
+	public void goToSleep() {
+		setAsleep(true);
+
+	}
+
+	public void wakeUp() {
+		setAsleep(false);
+	}
+
+	public String eat() {
+		return eatingSound;
+	}
+
+	public boolean isAsleep() {
+		return getAsleep();
 	}
 
 	public boolean isDomestic() {
@@ -45,10 +88,8 @@ public abstract class BaseCat {
 		return isAsleep;
 	}
 
-	abstract String getColor();
-
-	public String getCatDefaultSound() {
-		return CatFeature.MEAOW.behaviour;
+	public String getColor() {
+		return color;
 	}
 
 }
